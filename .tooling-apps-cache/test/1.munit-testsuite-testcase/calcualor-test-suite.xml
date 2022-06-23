@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="calcualor-test-suite.xml" />
+	<munit:test name="calcualor-SUM-test-suite-basic-CalculatorTest" doc:id="6f45631d-a8ea-4b8a-887f-80d4577d6ba8" description="Test">
+		<munit:behavior >
+			<set-payload value='#[output applicaton/json&#10;---&#10;{&#10;	"a":5,&#10;	"b":10&#10;}]' doc:name="Set Payload" doc:id="223af21c-e020-4a43-a77c-54e4f1035d2d" />
+		</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to basic-Calculator" doc:id="856c983a-0bad-4857-a3ad-e5dc3d17291b" name="basic-Calculator"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-equals doc:name="Assert equals" doc:id="d0332577-6d6e-47f6-a27f-efa1b98f8aa7" actual="#[payload.SUM]" expected="#[15]"/>
+			<munit-tools:assert-that doc:name="Assert that" doc:id="018ee8f6-4b5d-43b1-8134-e48618cf5e9d" is="#[MunitTools::equalTo(15)]" expression="#[payload.SUM]"/>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>
