@@ -1,0 +1,41 @@
+{
+  "configs": [
+    "create-employee-api-test-suite.xml",
+    "emp-appraisal-api-test-suite.xml",
+    "create-employee-api.xml",
+    "emp-appraisal-api.xml"
+  ],
+  "secureProperties": [],
+  "redeploymentEnabled": true,
+  "name": "com.mycompany:emp-appraisal-api:1.0.0-SNAPSHOT",
+  "minMuleVersion": "4.3.0",
+  "requiredProduct": "MULE_EE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "exportedResources": [
+        "create-employee-api.xml",
+        "emp-appraisal-api.xml",
+        "log4j2.xml",
+        "createemployeetestresources/assert_create_employee_success_response.dwl",
+        "createemployeetestresources/Assert_Reqres_Request_Payload.dwl",
+        "createemployeetestresources/Assert_Reqres_Response_Payload.dwl",
+        "createemployeetestresources/mock_create_employee_input_success_payload.dwl",
+        "createemployeetestresources/mock_reqres_response_success_payload.dwl",
+        "empappraisaltestresources/assert_expression_not_found_payload.dwl",
+        "empappraisaltestresources/assert_expression_success_payload.dwl",
+        "empappraisaltestresources/mock_not_found_payload.dwl",
+        "empappraisaltestresources/mock_success_payload.dwl",
+        "empappraisaltestresources/set_event_not_found_attributes.dwl",
+        "empappraisaltestresources/set_event_success_attributes.dwl",
+        "log4j2-test.xml"
+      ],
+      "includeTestDependencies": "true",
+      "exportedPackages": []
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}
